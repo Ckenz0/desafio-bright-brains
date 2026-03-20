@@ -26,22 +26,8 @@
                   "Property": "Paciente"
                 }
               },
-              "queryRef": "Dados.Paciente",
+              "queryRef": "Tabela.Paciente",
               "nativeQueryRef": "Paciente"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Dados"
-                    }
-                  },
-                  "Property": "Condição"
-                }
-              },
-              "queryRef": "Dados.Condição",
-              "nativeQueryRef": "Condição"
             },
             {
               "field": {
@@ -54,7 +40,7 @@
                   "Property": "Idade"
                 }
               },
-              "queryRef": "Dados.Idade",
+              "queryRef": "Tabela.Idade",
               "nativeQueryRef": "Idade"
             },
             {
@@ -68,8 +54,22 @@
                   "Property": "Sessões"
                 }
               },
-              "queryRef": "Dados.Sessões",
+              "queryRef": "Tabela.Sessões",
               "nativeQueryRef": "Sessões"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dados"
+                    }
+                  },
+                  "Property": "Condição"
+                }
+              },
+              "queryRef": "Tabela.Condição",
+              "nativeQueryRef": "Condição"
             },
             {
               "field": {
@@ -82,7 +82,7 @@
                   "Property": "Melhora (%)"
                 }
               },
-              "queryRef": "Dados.Melhora (%)",
+              "queryRef": "Tabela.Melhora (%)",
               "nativeQueryRef": "Melhora (%)"
             }
           ]
@@ -107,6 +107,32 @@
       }
     },
     "objects": {
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "total": [
+        {
+          "properties": {
+            "totals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
       "columnFormatting": [
         {
           "properties": {
@@ -116,7 +142,7 @@
                   "color": {
                     "expr": {
                       "Literal": {
-                        "Value": "'#43D688'"
+                        "Value": "'#9DE562'"
                       }
                     }
                   }
@@ -127,7 +153,7 @@
                   "color": {
                     "expr": {
                       "Literal": {
-                        "Value": "'#D64550'"
+                        "Value": "'#de6a73'"
                       }
                     }
                   }
@@ -168,33 +194,7 @@
             }
           },
           "selector": {
-            "metadata": "Dados.Melhora (%)"
-          }
-        }
-      ],
-      "values": [
-        {
-          "properties": {
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "14D"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "total": [
-        {
-          "properties": {
-            "totals": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
+            "metadata": "Tabela.Melhora (%)"
           }
         }
       ],
@@ -204,13 +204,13 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "331.5741126133593D"
+                  "Value": "226.41018213177176D"
                 }
               }
             }
           },
           "selector": {
-            "metadata": "Dados.Melhora (%)"
+            "metadata": "Tabela.Condição"
           }
         },
         {
@@ -218,13 +218,13 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "197.44781599174735D"
+                  "Value": "330.7418101125216D"
                 }
               }
             }
           },
           "selector": {
-            "metadata": "Dados.Sessões"
+            "metadata": "Tabela.Melhora (%)"
           }
         },
         {
@@ -232,13 +232,13 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "112.5098662164657D"
+                  "Value": "134.4194118882433D"
                 }
               }
             }
           },
           "selector": {
-            "metadata": "Dados.Idade"
+            "metadata": "Tabela.Sessões"
           }
         },
         {
@@ -246,27 +246,13 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "136.9635432344065D"
+                  "Value": "80.12901501356734D"
                 }
               }
             }
           },
           "selector": {
-            "metadata": "Dados.Condição"
-          }
-        },
-        {
-          "properties": {
-            "value": {
-              "expr": {
-                "Literal": {
-                  "Value": "109.85715660187316D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "Dados.Paciente"
+            "metadata": "Tabela.Idade"
           }
         }
       ]
@@ -323,6 +309,19 @@
             }
           }
         }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "drillFilterOtherVisuals": true
@@ -330,7 +329,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "42df58ff450271694291",
+        "name": "f60ba99f89afd754f85d",
         "field": {
           "Column": {
             "Expression": {
@@ -344,35 +343,7 @@
         "type": "Categorical"
       },
       {
-        "name": "8d0035f2f37d5ea6c341",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Dados"
-              }
-            },
-            "Property": "Condição"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "4d73903dbc781242c74f",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Dados"
-              }
-            },
-            "Property": "Idade"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "9c98998a3a968930fb11",
+        "name": "09e26030365c8688e54c",
         "field": {
           "Column": {
             "Expression": {
@@ -386,7 +357,35 @@
         "type": "Advanced"
       },
       {
-        "name": "40a742414dfef8e23a95",
+        "name": "06b0b94a1f6790184139",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dados"
+              }
+            },
+            "Property": "Condição"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "39d8f217244aa7c3f1bf",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dados"
+              }
+            },
+            "Property": "Idade"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "ae5d64b7f8393db107b7",
         "field": {
           "Column": {
             "Expression": {

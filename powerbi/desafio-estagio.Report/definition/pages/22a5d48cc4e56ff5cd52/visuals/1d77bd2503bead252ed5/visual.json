@@ -4,10 +4,10 @@
   "position": {
     "x": 1678.5714285714287,
     "y": 868.57142857142867,
-    "z": 6001,
+    "z": 7000,
     "height": 87.142857142857153,
     "width": 128.57142857142858,
-    "tabOrder": 6001
+    "tabOrder": 7000
   },
   "visual": {
     "visualType": "card",
@@ -26,7 +26,7 @@
                   "Property": "Correlação"
                 }
               },
-              "queryRef": "Dados.Correlação",
+              "queryRef": "Tabela.Correlação",
               "nativeQueryRef": "Correlação"
             }
           ]
@@ -150,23 +150,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "204809e3056d01dc45d1",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Dados"
-              }
-            },
-            "Property": "Correlação"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

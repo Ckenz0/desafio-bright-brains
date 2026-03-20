@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "d4f1dca9c2c3dc742a6e",
   "position": {
-    "x": 914.28571428571433,
-    "y": 625.71428571428578,
+    "x": 913.54838709677415,
+    "y": 626.23655913978484,
     "z": 4000,
-    "height": 390,
-    "width": 914.28571428571433,
+    "height": 388.81720430107526,
+    "width": 915.26881720430106,
     "tabOrder": 4000
   },
   "visual": {
@@ -26,7 +26,7 @@
                   "Property": "Condição"
                 }
               },
-              "queryRef": "Dados.Condição",
+              "queryRef": "Tabela.Condição",
               "nativeQueryRef": "Condição"
             }
           ]
@@ -49,7 +49,7 @@
                   "Function": 3
                 }
               },
-              "queryRef": "Min(Dados.Paciente)",
+              "queryRef": "Min(Tabela.Paciente)",
               "nativeQueryRef": "Primeiro Paciente"
             }
           ]
@@ -58,22 +58,17 @@
           "projections": [
             {
               "field": {
-                "Aggregation": {
+                "Column": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Dados"
-                        }
-                      },
-                      "Property": "Sessões"
+                    "SourceRef": {
+                      "Entity": "Dados"
                     }
                   },
-                  "Function": 0
+                  "Property": "Sessões"
                 }
               },
-              "queryRef": "Sum(Dados.Sessões)",
-              "nativeQueryRef": "Soma de Sessões",
+              "queryRef": "Tabela.Sessões",
+              "nativeQueryRef": "Sessões",
               "active": true
             }
           ]
@@ -91,7 +86,7 @@
                   "Property": "Melhora (%)"
                 }
               },
-              "queryRef": "Dados.Melhora (%)",
+              "queryRef": "Tabela.Melhora (%)",
               "nativeQueryRef": "Melhora (%)"
             }
           ]
@@ -173,7 +168,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "f31e5359d9cea9adcb8c",
+        "name": "b35d9348318570c056a7",
         "field": {
           "Column": {
             "Expression": {
@@ -187,26 +182,7 @@
         "type": "Categorical"
       },
       {
-        "name": "e05f100c2a228b2f6c57",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Dados"
-                  }
-                },
-                "Property": "Sessões"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "b6068b2cb662c60f7ffe",
+        "name": "aba977970027fb113f2c",
         "field": {
           "Column": {
             "Expression": {
@@ -220,7 +196,21 @@
         "type": "Advanced"
       },
       {
-        "name": "194c61e7b91ec3b545d2",
+        "name": "a9b2ebcd1438e0b09d52",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dados"
+              }
+            },
+            "Property": "Sessões"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "98e55bb6bcad649a7870",
         "field": {
           "Aggregation": {
             "Expression": {

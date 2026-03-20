@@ -26,7 +26,7 @@
                   "Property": "Média Melhora"
                 }
               },
-              "queryRef": "Dados.Média Melhora",
+              "queryRef": "Tabela.Média Melhora",
               "nativeQueryRef": "Média Melhora"
             }
           ]
@@ -150,23 +150,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "07f2a105ed975acc81cd",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Dados"
-              }
-            },
-            "Property": "Média Melhora"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

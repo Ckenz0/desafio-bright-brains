@@ -26,7 +26,7 @@
                   "Property": "Melhor Paciente"
                 }
               },
-              "queryRef": "Dados.Melhor Paciente",
+              "queryRef": "Tabela.Melhor Paciente",
               "nativeQueryRef": "Melhor Paciente"
             }
           ]
@@ -135,23 +135,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "0d3a9dfac23910c0d8a1",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Dados"
-              }
-            },
-            "Property": "Melhor Paciente"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }
