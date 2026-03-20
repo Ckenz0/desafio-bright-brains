@@ -1,0 +1,118 @@
+table Dados
+	lineageTag: b681d71d-a25a-4c03-b02c-181d59375538
+
+	measure 'Média Melhora' = AVERAGE(Dados[Melhora (%)])
+		lineageTag: 9729df08-e69a-4f2e-81c7-18d22c25687e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Média Sessões' = AVERAGE(Dados[Sessões])
+		lineageTag: 93410276-fe4f-4b32-8c37-9e47926ea60f
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Pacientes' = COUNTROWS(Dados)
+		formatString: 0
+		lineageTag: 68a38514-8f6a-41e9-b079-b3dcb9a284be
+
+	measure 'Correlação Sessões Melhora' = VAR MeanX = AVERAGE(Dados[Sessões]) VAR MeanY = AVERAGE(Dados[Melhora (%)]) RETURN DIVIDE(   SUMX(Dados, (Dados[Sessões]-MeanX)*(Dados[Melhora (%)]-MeanY)),   SQRT(     SUMX(Dados, (Dados[Sessões]-MeanX)^2) *     SUMX(Dados, (Dados[Melhora (%)]-MeanY)^2)   ) )
+		lineageTag: 68d4f7ec-b503-46fe-b1ae-1a250678ae58
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Melhor Paciente' = ```
+			VAR MaxMelhora = MAX(Dados[Melhora (%)]) RETURN CALCULATE(   FIRSTNONBLANK(Dados[Paciente], 1),   Dados[Melhora (%)] = MaxMelhora )
+			
+			
+			```
+		lineageTag: f266b58c-93a6-4eda-bb49-73e42a032365
+
+	measure 'Melhor Condição' = ```
+			
+			VAR TabelaResumo = 
+			    SUMMARIZE(
+			        Dados,
+			        Dados[Condição],
+			        "MediaMelhora", AVERAGE(Dados[Melhora (%)])
+			    )
+			VAR MaiorMedia = 
+			    MAXX(TabelaResumo, [MediaMelhora])
+			RETURN
+			    MAXX(
+			        FILTER(TabelaResumo, [MediaMelhora] = MaiorMedia),
+			        Dados[Condição]
+			    )
+			```
+		lineageTag: 73e5eadd-7373-432a-bd20-435cc1e27fe0
+
+	measure Correlação =
+			
+			VAR MeanX = AVERAGE(Dados[Sessões])
+			VAR MeanY = AVERAGE(Dados[Melhora (%)])
+			RETURN
+			DIVIDE(
+			    SUMX(Dados, (Dados[Sessões] - MeanX) * (Dados[Melhora (%)] - MeanY)),
+			    SQRT(
+			        SUMX(Dados, (Dados[Sessões] - MeanX) ^ 2) *
+			        SUMX(Dados, (Dados[Melhora (%)] - MeanY) ^ 2)
+			    )
+			)
+		formatString: 0.000
+		lineageTag: 5351d790-9891-48d8-98dc-2e43e13ff99d
+
+	column Paciente
+		dataType: string
+		lineageTag: a0bacabe-a012-4b35-8fd0-8dc1418c5f85
+		summarizeBy: none
+		sourceColumn: Paciente
+
+		annotation SummarizationSetBy = Automatic
+
+	column Idade
+		dataType: int64
+		formatString: 0
+		lineageTag: 483db51f-9996-4da1-a5ad-8a097c6120a1
+		summarizeBy: none
+		sourceColumn: Idade
+
+		annotation SummarizationSetBy = User
+
+	column Condição
+		dataType: string
+		lineageTag: 2248d767-6f99-4f0f-8cf9-ed9326993b84
+		summarizeBy: none
+		sourceColumn: Condição
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sessões
+		dataType: int64
+		formatString: 0
+		lineageTag: a178ef8e-23d3-4aa6-bace-29d8491c0994
+		summarizeBy: none
+		sourceColumn: Sessões
+
+		annotation SummarizationSetBy = User
+
+	column 'Melhora (%)'
+		dataType: int64
+		formatString: 0
+		lineageTag: 662703b4-c150-4b98-9b51-0039be949487
+		summarizeBy: none
+		sourceColumn: Melhora (%)
+
+		annotation SummarizationSetBy = User
+
+	partition Dados = m
+		mode: import
+		source =
+				let
+				    Fonte = Excel.Workbook(File.Contents("C:\Users\cauek\Downloads\bright_brains_dados.xlsx"), null, true),
+				    Dados_Sheet = Fonte{[Item="Dados",Kind="Sheet"]}[Data],
+				    #"Cabeçalhos Promovidos" = Table.PromoteHeaders(Dados_Sheet, [PromoteAllScalars=true]),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos",{{"Paciente", type text}, {"Idade", Int64.Type}, {"Condição", type text}, {"Sessões", Int64.Type}, {"Melhora (%)", Int64.Type}})
+				in
+				    #"Tipo Alterado"
+
+	annotation PBI_ResultType = Table
+

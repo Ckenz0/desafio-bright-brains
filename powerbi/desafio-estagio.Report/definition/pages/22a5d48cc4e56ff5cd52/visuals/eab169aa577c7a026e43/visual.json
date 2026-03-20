@@ -1,0 +1,404 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "eab169aa577c7a026e43",
+  "position": {
+    "x": 925.71428571428578,
+    "y": 270,
+    "z": 5000,
+    "height": 270,
+    "width": 902.85714285714289,
+    "tabOrder": 5000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dados"
+                    }
+                  },
+                  "Property": "Paciente"
+                }
+              },
+              "queryRef": "Dados.Paciente",
+              "nativeQueryRef": "Paciente"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dados"
+                    }
+                  },
+                  "Property": "Condição"
+                }
+              },
+              "queryRef": "Dados.Condição",
+              "nativeQueryRef": "Condição"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dados"
+                    }
+                  },
+                  "Property": "Idade"
+                }
+              },
+              "queryRef": "Dados.Idade",
+              "nativeQueryRef": "Idade"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dados"
+                    }
+                  },
+                  "Property": "Sessões"
+                }
+              },
+              "queryRef": "Dados.Sessões",
+              "nativeQueryRef": "Sessões"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dados"
+                    }
+                  },
+                  "Property": "Melhora (%)"
+                }
+              },
+              "queryRef": "Dados.Melhora (%)",
+              "nativeQueryRef": "Melhora (%)"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Dados"
+                  }
+                },
+                "Property": "Melhora (%)"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "columnFormatting": [
+        {
+          "properties": {
+            "dataBars": {
+              "positiveColor": {
+                "solid": {
+                  "color": {
+                    "expr": {
+                      "Literal": {
+                        "Value": "'#43D688'"
+                      }
+                    }
+                  }
+                }
+              },
+              "negativeColor": {
+                "solid": {
+                  "color": {
+                    "expr": {
+                      "Literal": {
+                        "Value": "'#D64550'"
+                      }
+                    }
+                  }
+                }
+              },
+              "axisColor": {
+                "solid": {
+                  "color": {
+                    "expr": {
+                      "Literal": {
+                        "Value": "'foreground'"
+                      }
+                    }
+                  }
+                }
+              },
+              "reverseDirection": {
+                "expr": {
+                  "Literal": {
+                    "Value": "false"
+                  }
+                }
+              },
+              "hideText": {
+                "expr": {
+                  "Literal": {
+                    "Value": "false"
+                  }
+                }
+              },
+              "totalMatchingOption": {
+                "expr": {
+                  "Literal": {
+                    "Value": "1L"
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Dados.Melhora (%)"
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "total": [
+        {
+          "properties": {
+            "totals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "331.5741126133593D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Dados.Melhora (%)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "197.44781599174735D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Dados.Sessões"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "112.5098662164657D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Dados.Idade"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "136.9635432344065D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Dados.Condição"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "109.85715660187316D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Dados.Paciente"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "lockAspect": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "keepLayerOrder": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "right": {
+              "expr": {
+                "Literal": {
+                  "Value": "5D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "42df58ff450271694291",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dados"
+              }
+            },
+            "Property": "Paciente"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "8d0035f2f37d5ea6c341",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dados"
+              }
+            },
+            "Property": "Condição"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "4d73903dbc781242c74f",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dados"
+              }
+            },
+            "Property": "Idade"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "9c98998a3a968930fb11",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dados"
+              }
+            },
+            "Property": "Sessões"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "40a742414dfef8e23a95",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dados"
+              }
+            },
+            "Property": "Melhora (%)"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}
