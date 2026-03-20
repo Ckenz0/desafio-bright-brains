@@ -80,6 +80,8 @@ Os insights clínicos foram gerados utilizando o modelo Claude da Anthropic. A a
 
 Em um ambiente de produção, a integração seria feita via API em tempo real. Para esta demonstração, os insights foram pré-processados e são exibidos com simulação de geração.
 
+Pode ser acessado pelo link: https://ckenz0.github.io/desafio-bright-brains/dashboard/bright_brains_dashboard.html
+
 ---
 
 ## Dashboard Power BI
